@@ -1,22 +1,19 @@
-<div class="main">
-  <h1>Welcome</h1>
-  <button routerLink="/add">Add Article</button>
-</div>
+<div class="body">
+  <div class="main">
+    <h1>Welcome</h1>
+    <!-- <button routerLink="/add">Add Article</button> -->
+    <button type="button" routerLink="/add" class="btn btn-primary">Add Article</button>
+  </div>
 
-<div class="content">
-  <div class="articleContent">
-    <h3>Author name</h3>
-    <h2>Article title</h2>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
+  <div class="content">
+    <div class="articleContent" *ngFor="let data of articleArr">
+        <img src="https://www.themintmagazine.com/wp-content/uploads/2022/09/pexels-simon-reza-8957485-300x200.jpg" width="415" height="250" alt="">
+      <h4>{{ data.author }}</h4>
+      <h2>{{ data.title }}</h2>
+      <p>12/02/2022</p>
+      <p>{{ data.content }}</p>
+      <button (click)="editArticle(data)" (click)="call(data)">Edit</button>
+      <button (click)="deleteArticle(data)">Delete</button>
+    </div>
   </div>
 </div>

@@ -1,3 +1,7 @@
+.body {
+    background-color: #eaeac9;
+}
+
 .main {
     text-align: center;
 }
@@ -6,8 +10,16 @@
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
+    gap: 30px;
+    justify-content: center;
 }
 
 .articleContent {
     max-width: 25%;
+    border: 1px solid;
+    padding: 20px;
+}
+
+h2 {
+    color: green;
 }

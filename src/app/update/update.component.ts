@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '../article.service';
 import { ArticleContent } from '../article-content.model';
 import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
-  selector: 'app-add-new',
-  templateUrl: './add-new.component.html',
-  styleUrls: ['./add-new.component.css'],
+  selector: 'app-update',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.css']
 })
-export class AddNewComponent implements OnInit {
+export class UpdateComponent implements OnInit {
+
   author: string = '';
   title: string = '';
   content: string = '';
@@ -18,11 +20,10 @@ export class AddNewComponent implements OnInit {
   articleData: ArticleContent[] = [];
   user: any;
   value: number = 0;
-  constructor(
-    private contentService: ArticleService,
+
+  constructor( private contentService: ArticleService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) {}
+    private router: Router) { }
 
   ngOnInit(): void {
     this.author = '';
@@ -31,7 +32,7 @@ export class AddNewComponent implements OnInit {
     this.articleObj = new ArticleContent();
     this.addContent = {};
     // this.data = this.activatedRoute.snapshot.params['id'];
-    // this.edit();
+    this.edit();
   }
 
   addBtn() {
@@ -46,22 +47,23 @@ export class AddNewComponent implements OnInit {
     });
   }
 
-  // edit() {
-  //   let sub = this.activatedRoute.params.subscribe((res) => {
-  //     this.data = res['id'];
-  //   });
-  //   console.log('Id:', this.data);
+  edit() {
+    let sub = this.activatedRoute.params.subscribe((res) => {
+      this.data = res['id'];
+    });
+    console.log('Id:', this.data);
 
-  //   this.contentService.edit(this.data).subscribe((data) => {
-  //     this.articleObj = data;
-  //     console.log('usssss', this.articleObj);
-  //   });
-  // }
+    this.contentService.edit(this.data).subscribe((data) => {
+      this.articleObj = data;
+      console.log('usssss', this.articleObj);
+    });
+  }
 
-  // updateArticle() {
-  //   this.contentService.editContent(this.articleObj).subscribe((res) => {
-  //     console.log('xxxxxxxxxxxx', res);
-  //   });
-  //   this.router.navigate(['']);
-  // }
+  updateArticle() {
+    this.contentService.editContent(this.articleObj).subscribe((res) => {
+      console.log('xxxxxxxxxxxx', res);
+    });
+    this.router.navigate(['']);
+  }
+
 }

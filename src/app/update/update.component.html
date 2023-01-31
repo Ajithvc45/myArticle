@@ -1,0 +1,21 @@
+<h2>Update Article</h2>
+<div class="form">
+    <form (ngSubmit)="addBtn()">
+      <label for="authorname">Author Name</label><br />
+      <input name="author" type="text" [(ngModel)]="articleObj.author" /><br />
+      <label for="title">Title</label><br />
+      <input name="title" type="text" [(ngModel)]="articleObj.title" /><br />
+      <label for="content">Content</label><br />
+      <textarea
+        name="content"
+        cols="30"
+        rows="10"
+        [(ngModel)]="articleObj.content"
+      ></textarea>
+      <button routerLink="">Back</button>
+      <!-- <button type="submit">Save</button> -->
+      <button type="button" (click)="updateArticle()">
+        Update
+      </button>
+    </form>
+  </div>

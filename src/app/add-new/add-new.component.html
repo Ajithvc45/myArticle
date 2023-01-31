@@ -1,12 +1,44 @@
 <h2>Add new Article</h2>
-<div class="form">
-  <form>
-    <label for="authorname">Author Name</label><br />
-    <input type="text" /><br />
+
+
+<!-- <div class="form" >
+  <form >
+    <label for="authorname">Author </label><br />
+    <input name="author" type="text" [(ngModel)]="author" /><br />
     <label for="title">Title</label><br />
-    <input type="text" /><br />
+    <input name="title" type="text" [(ngModel)]="title" /><br />
     <label for="content">Content</label><br />
-    <textarea name="content" cols="30" rows="10"></textarea>
-    <button>Save</button>
+    <textarea
+      name="content"
+      cols="30"
+      rows="10"
+      [(ngModel)]="content"
+    ></textarea>
+    <button routerLink="">Back</button>
+    <button type="submit" >Save</button>
+    <button type="submit" (click)="updateArticle()" *ngIf="user.id">
+      Update
+    </button>
   </form>
-</div>
+</div> -->
+
+<div class="form">
+    <form (ngSubmit)="addBtn()">
+      <label for="authorname">Author Name</label><br />
+      <input name="author" type="text" [(ngModel)]="author" /><br />
+      <label for="title">Title</label><br />
+      <input name="title" type="text" [(ngModel)]="title" /><br />
+      <label for="content">Content</label><br />
+      <textarea
+        name="content"
+        cols="30"
+        rows="10"
+        [(ngModel)]="content"
+      ></textarea>
+      <button routerLink="">Back</button>
+      <button type="submit">Save</button>
+      <!-- <button type="button" (click)="updateArticle()">
+        Update
+      </button> -->
+    </form>
+  </div>

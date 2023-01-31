@@ -1,0 +1,12 @@
+h2 {
+  text-align: center;
+}
+.form {
+  align-items: center;
+}
+
+form {
+  border: 1px solid;
+  max-width: 300px;
+  padding: 40px;
+}

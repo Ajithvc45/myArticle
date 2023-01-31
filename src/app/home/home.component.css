@@ -1,0 +1,13 @@
+.main {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.articleContent {
+    max-width: 25%;
+}

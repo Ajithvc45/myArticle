@@ -1,7 +1,6 @@
 <div class="body">
   <div class="main">
     <h1>Welcome</h1>
-    <!-- <button routerLink="/add">Add Article</button> -->
     <button type="button" routerLink="/add" class="btn btn-primary">Add Article</button>
   </div>
 
@@ -12,8 +11,8 @@
       <h2>{{ data.title }}</h2>
       <p>{{data.date}}</p>
       <p>{{ data.content }}</p>
-      <button (click)="editArticle(data)" (click)="call(data)">Edit</button>
-      <button (click)="deleteArticle(data)">Delete</button>
+      <button (click)="editArticle(data)"  type="button" class="btn btn-info">Edit</button>
+      <button (click)="deleteArticle(data)" type="button" class="btn btn-danger">Delete</button>
     </div>
   </div>
 </div>

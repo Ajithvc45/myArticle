@@ -45,10 +45,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  call(data: any) {
-    this.articleObj = data;
-    console.log('getttttttttt', this.articleObj);
-  }
+  // call(data: any) {
+  //   this.articleObj = data;
+  //   console.log('getttttttttt', this.articleObj);
+  // }
 
   deleteArticle(data: any) {
     this.contentService.deleteContent(data).subscribe((res) => {

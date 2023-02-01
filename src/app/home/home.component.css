@@ -18,8 +18,14 @@
     max-width: 25%;
     border: 1px solid;
     padding: 20px;
+    transition: 0.4s;
 }
 
 h2 {
     color: green;
+}
+
+.articleContent:hover {
+    background-color: rgb(199, 244, 244);
+    transform: scale(1.1);
 }

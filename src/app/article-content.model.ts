@@ -3,4 +3,5 @@ export class ArticleContent {
     author:string='';
     title:string='';
     content:string='';
+    date:string='';
 }

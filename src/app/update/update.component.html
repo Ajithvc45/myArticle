@@ -1,10 +1,12 @@
 <h2>Update Article</h2>
 <div class="form">
-    <form (ngSubmit)="addBtn()">
+    <form >
       <label for="authorname">Author Name</label><br />
       <input name="author" type="text" [(ngModel)]="articleObj.author" /><br />
       <label for="title">Title</label><br />
       <input name="title" type="text" [(ngModel)]="articleObj.title" /><br />
+      <label for="date">Date</label><br />
+      <input name="date" type="date" [(ngModel)]="articleObj.date" /><br />
       <label for="content">Content</label><br />
       <textarea
         name="content"

@@ -13,6 +13,7 @@ export class UpdateComponent implements OnInit {
   author: string = '';
   title: string = '';
   content: string = '';
+  date: string='';
   articleObj: ArticleContent = new ArticleContent();
   articleArr: ArticleContent[] = [];
   addContent: any;
@@ -29,23 +30,25 @@ export class UpdateComponent implements OnInit {
     this.author = '';
     this.title = '';
     this.content = '';
+    this.date='';
     this.articleObj = new ArticleContent();
     this.addContent = {};
     // this.data = this.activatedRoute.snapshot.params['id'];
     this.edit();
   }
 
-  addBtn() {
-    this.articleObj.author = this.author;
-    this.articleObj.title = this.title;
-    this.articleObj.content = this.content;
-    console.log('adddddd', this.articleObj);
+  // addBtn() {
+  //   this.articleObj.author = this.author;
+  //   this.articleObj.title = this.title;
+  //   this.articleObj.content = this.content;
+  //   this.articleObj.date = this.date;
+  //   console.log('adddddd', this.articleObj);
 
-    this.contentService.addContent(this.articleObj).subscribe((data) => {
-      this.ngOnInit();
-      console.log('successss', data);
-    });
-  }
+  //   this.contentService.addContent(this.articleObj).subscribe((data) => {
+  //     this.ngOnInit();
+  //     console.log('successss', data);
+  //   });
+  // }
 
   edit() {
     let sub = this.activatedRoute.params.subscribe((res) => {

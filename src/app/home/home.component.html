@@ -10,7 +10,7 @@
         <img src="https://www.themintmagazine.com/wp-content/uploads/2022/09/pexels-simon-reza-8957485-300x200.jpg" width="415" height="250" alt="">
       <h4>{{ data.author }}</h4>
       <h2>{{ data.title }}</h2>
-      <p>12/02/2022</p>
+      <p>{{data.date}}</p>
       <p>{{ data.content }}</p>
       <button (click)="editArticle(data)" (click)="call(data)">Edit</button>
       <button (click)="deleteArticle(data)">Delete</button>

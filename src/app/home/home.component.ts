@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   article: any;
   author: string = '';
   title: string = '';
+  date: string = '';
   content: string = '';
   ngOnInit(): void {
     this.author = '';
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   editArticle(data:any) {
     this.articleObj.author = this.author;
     this.articleObj.title = this.title;
+    this.articleObj.date = this.date;
     this.articleObj.content = this.content;
     this.contentService.editContent(data).subscribe((res) => {
       this.ngOnInit();

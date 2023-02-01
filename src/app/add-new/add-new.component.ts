@@ -46,26 +46,7 @@ export class AddNewComponent implements OnInit {
     this.contentService.addContent(this.articleObj).subscribe((data) => {
       this.ngOnInit();
       console.log('successss', data);
-      this.router.navigate(['']);
+      this.router.navigate(['home']);
     });
   }
-
-  // edit() {
-  //   let sub = this.activatedRoute.params.subscribe((res) => {
-  //     this.data = res['id'];
-  //   });
-  //   console.log('Id:', this.data);
-
-  //   this.contentService.edit(this.data).subscribe((data) => {
-  //     this.articleObj = data;
-  //     console.log('usssss', this.articleObj);
-  //   });
-  // }
-
-  // updateArticle() {
-  //   this.contentService.editContent(this.articleObj).subscribe((res) => {
-  //     console.log('xxxxxxxxxxxx', res);
-  //   });
-  //   this.router.navigate(['']);
-  // }
 }

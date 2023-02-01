@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     this.articleObj.date = this.date;
     this.articleObj.content = this.content;
     this.contentService.editContent(data).subscribe((res) => {
-      this.ngOnInit();
+      // this.ngOnInit();
       console.log('Successfully editing', res);
       this.router.navigate([`/edit/${res.id}`]);
     });

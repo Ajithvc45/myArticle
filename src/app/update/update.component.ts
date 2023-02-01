@@ -51,7 +51,7 @@ export class UpdateComponent implements OnInit {
   // }
 
   edit() {
-    let sub = this.activatedRoute.params.subscribe((res) => {
+    this.activatedRoute.params.subscribe((res) => {
       this.data = res['id'];
     });
     console.log('Id:', this.data);
@@ -66,7 +66,7 @@ export class UpdateComponent implements OnInit {
     this.contentService.editContent(this.articleObj).subscribe((res) => {
       console.log('xxxxxxxxxxxx', res);
     });
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 
 }

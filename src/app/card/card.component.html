@@ -18,7 +18,7 @@
       />
       <h4>{{ article.author }}</h4>
       <h2>{{ article.title }}</h2>
-      <p>{{ article.date }}</p>
+      <p>{{ article.date | date }}</p>
       <p>{{ article.content }}</p>
       <div class="button">
         <!-- <button (click)="editArticle(article)" type="button" class="btn btn-info">

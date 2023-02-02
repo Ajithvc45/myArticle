@@ -1,0 +1,88 @@
+<div class="body">
+  <div class="main">
+    <!-- <button type="button" routerLink="/add" class="btn btn-primary">
+      Add Article
+    </button> -->
+    <button type="button" routerLink="/add" mat-stroked-button color="primary">
+      Add Article
+    </button>
+  </div>
+
+  <div class="content">
+    <div class="articleContent" *ngFor="let article of articleArr">
+      <img
+        src="https://www.themintmagazine.com/wp-content/uploads/2022/09/pexels-simon-reza-8957485-300x200.jpg"
+        width="415"
+        height="250"
+        alt="Article img"
+      />
+      <h4>{{ article.author }}</h4>
+      <h2>{{ article.title }}</h2>
+      <p>{{ article.date }}</p>
+      <p>{{ article.content }}</p>
+      <div class="button">
+        <!-- <button (click)="editArticle(article)" type="button" class="btn btn-info">
+        Edit
+      </button> -->
+        <button
+          (click)=" openDialog(article);editArticle(article)"
+          type="button"
+          mat-raised-button
+          color="primary"
+        >
+          Edit
+        </button>
+        <div class="overlay" *ngIf="popup">
+          <div class="popup" id="popup">
+            <form>
+              <label>Author Name</label><br />
+              <input
+                name="author"
+                type="text"
+                [(ngModel)]="articleObj.author"
+              /><br />
+              <label>Title</label><br />
+              <input
+                name="title"
+                type="text"
+                [(ngModel)]="articleObj.title"
+              /><br />
+              <label>Date</label><br />
+              <input
+                name="date"
+                type="date"
+                [(ngModel)]="articleObj.date"
+              /><br />
+              <label>Content</label><br />
+              <!-- <input type="text" /><br /> -->
+              <textarea
+                name="content"
+                cols="30"
+                rows="10"
+                [(ngModel)]="articleObj.content"
+              ></textarea>
+              <button (click)="popup = false">Back</button>
+              <button>Update</button>
+            </form>
+            <a class="close" (click)="popup = false">&times;</a>
+          </div>
+        </div>
+        <!-- <button
+        (click)="deleteArticle(article)"
+        type="button"
+        class="btn btn-danger"
+      >
+        Delete
+      </button> -->
+        <button
+          mat-raised-button
+          (click)="deleteArticle(article)"
+          mat-raised-button
+          color="warn"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

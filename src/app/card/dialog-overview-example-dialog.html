@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Update Article</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput [(ngModel)]="articleObj.author">
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="articleObj.title">
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input type="date" matInput [(ngModel)]="articleObj.date">
+  </mat-form-field><br>
+  <mat-form-field appearance="fill">
+    <mat-label>Content</mat-label>
+    <input matInput [(ngModel)]="articleObj.content">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Back</button>
+  <button mat-button [mat-dialog-close]="articleObj.author" (click)="updateArticle()" cdkFocusInitial>Update</button>
+</div>

@@ -1,7 +1,7 @@
-<h2>Add new Article</h2>
+<div class="addSec">
+  <h2>Add new Article</h2>
 
-
-<!-- <div class="form" >
+  <!-- <div class="form" >
   <form >
     <label for="authorname">Author </label><br />
     <input name="author" type="text" [(ngModel)]="author" /><br />
@@ -22,7 +22,7 @@
   </form>
 </div> -->
 
-<div class="form">
+  <div class="form">
     <form (ngSubmit)="addBtn()">
       <label for="authorname">Author Name</label><br />
       <input name="author" type="text" [(ngModel)]="author" /><br />
@@ -36,7 +36,8 @@
         cols="30"
         rows="10"
         [(ngModel)]="content"
-      ></textarea>
+      ></textarea
+      ><br />
       <button routerLink="/home">Back</button>
       <button type="submit">Save</button>
       <!-- <button type="button" (click)="updateArticle()">
@@ -44,3 +45,4 @@
       </button> -->
     </form>
   </div>
+</div>

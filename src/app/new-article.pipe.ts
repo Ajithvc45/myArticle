@@ -17,7 +17,7 @@ export class NewArticlePipe implements PipeTransform {
     //         }
     //     }
     // }
-    value.sort((x:any,y:any) => y-x)
+    value.sort((x:any,y:any) => x - y)
     return value;
 }
 }

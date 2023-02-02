@@ -55,7 +55,7 @@ export class CardComponent implements OnInit {
       // this.articleArr
       console.log(
         'article',
-        this.articleArr.sort((x: any, y: any) => y - x)
+        this.articleArr.sort((x: any, y: any) => y.id - x.id)
       );
     });
   }
@@ -97,13 +97,6 @@ export class CardComponent implements OnInit {
     }
   }
 
-  // updateArticle() {
-  //   this.contentService.editContent(this.articleObj).subscribe((res) => {
-  //     console.log('xxxxxxxxxxxx', res);
-  //   });
-  //   this.popup = false;
-  //   window.location.reload();
-  // }
 
   openDialog(data: any): void {
     this.articleObj.id = data.id;

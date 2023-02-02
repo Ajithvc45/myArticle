@@ -35,7 +35,6 @@ export class CardComponent implements OnInit {
   content: string = '';
   popup = false;
   data: any;
-  animal: string = '';
   name: string = '';
 
   constructor(
@@ -52,7 +51,6 @@ export class CardComponent implements OnInit {
     console.log('Component Started');
     this.contentService.getContent(this.articleId).subscribe((res) => {
       this.articleArr = res;
-      // this.articleArr
       console.log(
         'article',
         this.articleArr.sort((x: any, y: any) => y.id - x.id)
@@ -85,16 +83,40 @@ export class CardComponent implements OnInit {
     });
   }
 
-  deleteArticle(data: any) {
-    var result = confirm('Are you sure you want to delete this Article?');
-    if (result == true) {
-      this.contentService.deleteContent(data).subscribe((res) => {
-        this.ngOnInit();
-        console.log('Successfully deleted', res);
-      });
-    } else {
-      console.log('canceled');
-    }
+  // deleteArticle(data: any) {
+  //   var result = confirm('Are you sure you want to delete this Article?');
+  //   if (result == true) {
+  //     this.contentService.deleteContent(data).subscribe((res) => {
+  //       this.ngOnInit();
+  //       console.log('Successfully deleted', res);
+  //     });
+  //   } else {
+  //     console.log('canceled');
+  //   }
+  // }
+
+  deleteArticle(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+    data:any
+  ): void {
+    this.articleObj.id = data.id;
+    this.articleObj.author = data.author;
+    this.articleObj.title = data.title;
+    this.articleObj.date = data.date;
+    this.articleObj.content = data.content;
+    this.dialog.open(DialogAnimationsExampleDialog, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data:{
+        id: this.articleObj.id,
+        author: this.articleObj.author,
+        title: this.articleObj.title,
+        date: this.articleObj.date,
+        content: this.articleObj.content,
+      },
+    });
   }
 
 
@@ -146,5 +168,25 @@ export class DialogOverviewExampleDialog {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+}
+
+@Component({
+  selector: 'dialog-animations-example-dialog',
+  templateUrl: 'dialog-animations-dialog.html',
+})
+export class DialogAnimationsExampleDialog {
+  constructor(
+    private contentService: ArticleService,
+    public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public articleObj: DialogData
+  ) {
+    console.log("aaaaaaaaa",articleObj);
+  }
+  deleteConfirm(data: any) {
+    this.contentService.deleteContent(data).subscribe((res) => {
+      console.log('Successfully deleted', res);
+    });
+    window.location.reload();
   }
 }

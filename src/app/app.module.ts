@@ -16,7 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { AddNewComponent } from './add-new/add-new.component';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
-import { CardComponent,DialogOverviewExampleDialog } from './card/card.component';
+import { CardComponent,DialogOverviewExampleDialog, DialogAnimationsExampleDialog } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { NewArticlePipe } from './new-article.pipe';
 
@@ -30,7 +30,8 @@ import { NewArticlePipe } from './new-article.pipe';
     HeaderComponent,
     NewArticlePipe,
     CardComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    DialogAnimationsExampleDialog
   ],
   imports: [
     BrowserModule,

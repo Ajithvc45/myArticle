@@ -9,6 +9,7 @@ import {
 } from '@angular/material/dialog';
 
 export interface DialogData {
+  id:number;
   author: string;
   title: string;
   articleObj: ArticleContent;
@@ -29,6 +30,7 @@ export class CardComponent implements OnInit {
   articleArr: ArticleContent[] = [];
   articleId: number = 1;
   article: any;
+  id:number=0;
   author: string = '';
   title: string = '';
   date: string = '';
@@ -58,6 +60,26 @@ export class CardComponent implements OnInit {
     });
   }
 
+  addNew(){
+    console.log("ffffffffffffffff");
+    if(this.id == 0){
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      height: '480px',
+      width: '350px',
+      data: {
+        id:this.id, 
+        author: this.author,
+        title: this.title,
+        date: this.date,
+        content: this.content,
+      },
+    });
+  }else{
+    console.log("sorryyyyyyy");
+    
+  }
+  }
+
   editArticle(data: any) {
     this.articleObj.id = data.id;
     this.articleObj.author = data.author;
@@ -83,17 +105,6 @@ export class CardComponent implements OnInit {
     });
   }
 
-  // deleteArticle(data: any) {
-  //   var result = confirm('Are you sure you want to delete this Article?');
-  //   if (result == true) {
-  //     this.contentService.deleteContent(data).subscribe((res) => {
-  //       this.ngOnInit();
-  //       console.log('Successfully deleted', res);
-  //     });
-  //   } else {
-  //     console.log('canceled');
-  //   }
-  // }
 
   deleteArticle(
     enterAnimationDuration: string,
@@ -151,6 +162,8 @@ export class CardComponent implements OnInit {
   templateUrl: 'dialog-overview-example-dialog.html',
 })
 export class DialogOverviewExampleDialog {
+   isValid = true;
+
   constructor(
     private contentService: ArticleService,
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
@@ -158,6 +171,7 @@ export class DialogOverviewExampleDialog {
   ) {
     console.log('hhhhhhhhhhhhhhhhh', articleObj);
   }
+
 
   updateArticle() {
     this.contentService.editContent(this.articleObj).subscribe((res) => {
@@ -168,6 +182,14 @@ export class DialogOverviewExampleDialog {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  addArticle(){
+    console.log("sendinggggg",this.articleObj);
+    this.contentService.addContent(this.articleObj).subscribe((data) => {
+      console.log('successss', data);
+    });
+    window.location.reload();
   }
 }
 

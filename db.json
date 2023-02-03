@@ -18,8 +18,8 @@
       "id": 6,
       "author": "Peter",
       "title": "Farmers plough their own furrow to change",
-      "content": "A brew of chemical fertilisers, sewage and other pollutants is costing lives and money as it splashes over our environment and our dinner plates.  Jyoti Banerjee and Arnav Jain offer",
-      "date": "2023-01-13"
+      "date": "2023-01-13",
+      "content": "A brew of chemical fertilisers, sewage and other pollutants is costing lives and money as it splashes over our environment and our dinner plates.  Jyoti Banerjee and Arnav Jain offer"
     },
     {
       "id": 7,
@@ -53,8 +53,8 @@
       "id": 18,
       "author": "Jesse",
       "title": "More is less",
-      "content": "Mainstream politics has long proved resistant to the arguments of those who question the pursuit of unending economic growth. Richard McNeill Douglas suggests a treatment. It is fifty years since",
-      "date": "2022-12-07"
+      "date": "2022-12-07",
+      "content": "Mainstream politics has long proved resistant to the arguments of those who question the pursuit of unending economic growth. Richard McNeill Douglas suggests a treatment. It is fifty years since"
     },
     {
       "id": 19,
@@ -62,6 +62,20 @@
       "title": "The ifs and buts of Hydrogen",
       "date": "2023-01-12T18:30:00.000Z",
       "content": "Hydrogen may be useful, but how green can it really be? asks Roland Kupers. It has been used for centuries: from lifting the balloon that Jacques Charles floated over Paris"
+    },
+    {
+      "id": 20,
+      "author": "qwert",
+      "title": "qwertyu",
+      "date": "2023-02-09T18:30:00.000Z",
+      "content": "qwertyui"
+    },
+    {
+      "id": 21,
+      "author": "Test man",
+      "title": "Test article",
+      "date": "2023-02-15T18:30:00.000Z",
+      "content": "Test content"
     }
   ],
   "comments": [],

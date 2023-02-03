@@ -32,7 +32,7 @@
   *ngIf="articleObj.id==0"
     mat-button
     [mat-dialog-close]="articleObj.author"
-    (click)="updateArticle();addArticle()"
+    (click)="addArticle()"
     cdkFocusInitial
   >
     Save
@@ -41,7 +41,7 @@
   *ngIf="articleObj.id"
     mat-button
     [mat-dialog-close]="articleObj.author"
-    (click)="updateArticle();addArticle()"
+    (click)="updateArticle()"
     cdkFocusInitial
   >
     Update

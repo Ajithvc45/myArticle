@@ -86,11 +86,6 @@ export class CardComponent implements OnInit {
     this.articleObj.title = data.title;
     this.articleObj.date = data.date;
     this.articleObj.content = data.content;
-    // this.contentService.editContent(data).subscribe((res) => {
-    //   // this.ngOnInit();
-    //   console.log('Successfully editing', res);
-    //   // this.router.navigate([`/edit/${res.id}`]);
-    // });
   }
 
   edit() {
@@ -152,7 +147,6 @@ export class CardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed', data);
-      // this.animal = result;
     });
   }
 }

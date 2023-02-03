@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { CardComponent,DialogOverviewExampleDialog, DialogAnimationsExampleDialog } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { NewArticlePipe } from './new-article.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewArticlePipe } from './new-article.pipe';
     NewArticlePipe,
     CardComponent,
     DialogOverviewExampleDialog,
-    DialogAnimationsExampleDialog
+    DialogAnimationsExampleDialog,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
